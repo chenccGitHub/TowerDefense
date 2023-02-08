@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 2472022519
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: end
+      Dependencies: {}
+    Info_1:
+      Name: environment
+      Dependencies: {}
+    Info_2:
+      Name: nodes
+      Dependencies: {}
+    Info_3:
+      Name: start
+      Dependencies: {}
+    Info_4:
+      Name: waypoints
+      Dependencies: {}
+    Info_5:
+      Name: gamemaster
+      Dependencies: {}
+    Info_6:
+      Name: ashopcanvas
+      Dependencies: {}

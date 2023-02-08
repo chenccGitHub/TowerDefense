@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 987927723
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6c60fc2cba700a7172fe59605efcadfb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a6a6d9905c0212160c02e198bd1c26b0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2edca3c0a424a964e9f8e8dd14af3ed4, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefab/AB/Waypoints.prefab
+Dependencies: []
