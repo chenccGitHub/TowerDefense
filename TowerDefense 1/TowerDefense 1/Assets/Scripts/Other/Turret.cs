@@ -100,6 +100,7 @@ public class Turret : MonoBehaviour
         }
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
+        target.GetComponent<Enemy>().BeingHit(0.35f);
     }
     void LockTarget()
     {

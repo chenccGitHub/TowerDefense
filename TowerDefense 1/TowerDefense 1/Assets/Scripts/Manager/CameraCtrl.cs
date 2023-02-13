@@ -39,19 +39,19 @@ public class CameraCtrl : MonoBehaviour
         else if (scroll < 0.0f)
             targetDistance += zoomSpeed;
         targetDistance = Mathf.Clamp(targetDistance, minDistance, maxDistance);
-        if (Input.GetMouseButton(0))
-        {
-            targetX += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-            if (allowYTilt)
-            {
-                targetY -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-                targetY = ClampAngle(targetY, yMinLimit, yMaxLimit);
-            }
-        }
-        else if (Input.GetMouseButton(1))
-        {
-            MoveObject();
-        }
+        //if (Input.GetMouseButton(0))
+        //{
+        //    targetX += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+        //    if (allowYTilt)
+        //    {
+        //        targetY -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+        //        targetY = ClampAngle(targetY, yMinLimit, yMaxLimit);
+        //    }
+        //}
+        //else if (Input.GetMouseButton(1))
+        //{
+        //    MoveObject();
+        //}
         x = Mathf.SmoothDampAngle(x, targetX, ref xVelocity, 0.3f);
         y = allowYTilt ? Mathf.SmoothDampAngle(y, targetY, ref yVelocity, 0.3f) : targetY;
         Quaternion rotation = Quaternion.Euler(y + rotationOffect.x, x + rotationOffect.y, 0);

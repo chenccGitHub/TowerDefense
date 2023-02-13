@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CHENCONGCONG;
+using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     private float speed = 6f;
     private Transform target;
     private int waypointsIndex = 0;
-    public float hp = 2;
+    public float hp = 200;
     public int damage = 1;
+    public Image hpImage;
+    public float hpMax = 200;
     void Start()
     {
-        hp = 2;
+        hp = hpMax;
         target = Waypoints.points[0];
     }
     void Update()
@@ -42,6 +45,11 @@ public class Enemy : MonoBehaviour
         else
         {
             hp -= damage;
+            SetHpImageShow();
         }
+    }
+    private void SetHpImageShow()
+    {
+        hpImage.fillAmount = hp / hpMax;
     }
 }

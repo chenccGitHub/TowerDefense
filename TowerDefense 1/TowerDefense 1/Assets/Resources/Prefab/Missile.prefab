@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  offest: 0.5
+  offest: 1.5
   explosionRadius: 20
-  damage: 2
+  damage: 25
 --- !u!1001 &7217982442891164426
 PrefabInstance:
   m_ObjectHideFlags: 0

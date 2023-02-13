@@ -315,8 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 1873886230}
-  pivotOffset: {x: 0, y: 0, z: 0}
-  distance: 200
+  pivotOffset: {x: -5, y: 0, z: 0}
+  distance: 160
   minDistance: 2
   maxDistance: 200
   zoomSpeed: 5
