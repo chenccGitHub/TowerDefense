@@ -21,6 +21,7 @@ public class Turret : MonoBehaviour
     private Transform firePoint;
     private bool isCanLaser = false;
     public LineRenderer lineRenderer;
+    private List<Enemy> enemys;
     void Awake()
     {
         isCanLaser = false ;
@@ -36,6 +37,7 @@ public class Turret : MonoBehaviour
         else if (name == "LaserTurret(Clone)")
         {
             isCanLaser = true;
+            enemys = new List<Enemy>();
         }
         firePoint = partTorotate.Find("FirePoint");
         
@@ -74,6 +76,13 @@ public class Turret : MonoBehaviour
             if (lineRenderer != null)
             {
                 lineRenderer.enabled = false;
+                if (enemys.Count > 0)
+                {
+                    foreach (var enemy in enemys)
+                    {
+                        enemy.LowerSpeed(false);
+                    }
+                }
             }
             return;
         } 
@@ -101,6 +110,11 @@ public class Turret : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
         target.GetComponent<Enemy>().BeingHit(0.35f);
+        target.GetComponent<Enemy>().LowerSpeed(true);
+        if (!enemys.Contains(target.GetComponent<Enemy>()))
+        {
+            enemys.Add(target.GetComponent<Enemy>());
+        }
     }
     void LockTarget()
     {

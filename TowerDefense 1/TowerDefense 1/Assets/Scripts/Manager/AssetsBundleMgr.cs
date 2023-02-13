@@ -11,7 +11,7 @@ public class AssetsBundleMgr : MonoBehaviour
     }
     private static IEnumerator GetAssetsBundle(string path,string name,Action<object> callBack)
     {
-        var uwr = UnityWebRequestAssetBundle.GetAssetBundle(@"file:///"+ path + name);
+        var uwr = UnityWebRequestAssetBundle.GetAssetBundle(path + name);
         yield return uwr.SendWebRequest();
         AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(uwr);
         var loadAsset = bundle.LoadAllAssetsAsync();

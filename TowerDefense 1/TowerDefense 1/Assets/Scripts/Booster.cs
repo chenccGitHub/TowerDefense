@@ -27,7 +27,7 @@ public class Booster : MonoBehaviour
         //}
         foreach (var name in abNameList)
         {
-            AssetsBundleMgr.DownLoadAssetsBundle(Application.dataPath + "/StreamingAssets/", name.ToLower(), (go) =>
+            AssetsBundleMgr.DownLoadAssetsBundle(GetStreamingAssetsPath(), name.ToLower(), (go) =>
             {
                 var prefab = go as GameObject;
                 prefab.name = name;
@@ -38,5 +38,19 @@ public class Booster : MonoBehaviour
     }
     void FixShaders(GameObject obj)
     {
+    }
+    public string GetStreamingAssetsPath()
+    {
+        string StreamingAssetsPath =
+#if UNITY_EDITOR
+        "file://" + Application.dataPath + "/StreamingAssets/";
+#elif UNITY_ANDROID
+        "jar:file://" + Application.dataPath + "!/assets/";
+#elif UNITY_IPHONE
+        Application.dataPath + "/Raw/";
+#else
+        string.Empty;
+#endif
+        return StreamingAssetsPath;
     }
 }

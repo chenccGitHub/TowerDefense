@@ -12,16 +12,20 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     public Image hpImage;
     public float hpMax = 200;
+    bool isLowerSpeed; //ÊÇ·ñ¼õËÙ
     void Start()
     {
+        isLowerSpeed = false;
         hp = hpMax;
         target = Waypoints.points[0];
     }
     void Update()
     {
+        if (isLowerSpeed) speed = 2;
+        else speed = 6;
         Vector3 position = target.position - transform.position;
         transform.Translate(position.normalized * speed * Time.deltaTime, Space.World);
-        if (Vector3.Distance(transform.position, target.position) < speed * 0.01f)
+        if (Vector3.Distance(transform.position, target.position) < speed * 0.015f)
         {
             GetNextWaypoint();
         }
@@ -51,5 +55,12 @@ public class Enemy : MonoBehaviour
     private void SetHpImageShow()
     {
         hpImage.fillAmount = hp / hpMax;
+    }
+    public void LowerSpeed(bool canLower)
+    {
+        if (isLowerSpeed != canLower)
+        {
+            isLowerSpeed = canLower;
+        }
     }
 }
