@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 7867996794177715630}
   - component: {fileID: 4385313533632736789}
   - component: {fileID: 8597562384713738827}
+  - component: {fileID: 327971120589730038}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -355,3 +356,16 @@ MonoBehaviour:
   damage: 1
   hpImage: {fileID: 880327829}
   hpMax: 200
+--- !u!65 &327971120589730038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462691533747897832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
